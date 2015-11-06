@@ -14,19 +14,24 @@ export default class TopContributors extends Component {
     const i18n = metadata.i18n
     const contributors = metadata.contributors
     const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
-
-    let topContributors = Object.keys(contributors.map)
-    topContributors.sort(
-      (a, b) => contributors.contributions[b] - contributors.contributions[a]
+    const recentContributors = Object.keys(contributors.recentContributions)
+    recentContributors.sort(
+      (a, b) => (
+        contributors.recentContributions[b]
+        - contributors.recentContributions[a]
+      )
     )
-    topContributors = topContributors.slice(0, 12)
+    const topContributors = recentContributors.slice(0, 8)
 
     return (
       <div>
         <div className="putainde-Title putainde-Title--home">
           <h2 className="putainde-Title-text">
-            {i18n.topContributors}
+            { i18n.topContributors }
           </h2>
+          <small style={ { opacity: .5 } }>
+            { i18n.topContributorsNote }
+          </small>
         </div>
 
         <div className="r-Grid r-Grid--withGutter">
@@ -37,7 +42,7 @@ export default class TopContributors extends Component {
                   <Author
                     author={author}
                     afterName={
-                      `(${contributors.contributions[author]} commits)`
+                      `(${contributors.recentContributions[author]} commits)`
                     }
                   />
                 </div>

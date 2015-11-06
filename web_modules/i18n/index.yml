@@ -6,6 +6,7 @@
   posts: "Les articles"
   manifesto: "Putain de code, c'est quoi ?"
   topContributors: "Top des contributeurs"
+  topContributorsNote: "sur les 12 derniers mois"
   initialCommit: "commit initial par"
   morePosts: "Plus d'articles"
   writtenBy: "Écrit par"
