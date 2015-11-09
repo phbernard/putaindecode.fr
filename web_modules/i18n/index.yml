@@ -65,7 +65,4 @@
     -
       url: "/feed.xml"
       name: "Flux RSS"
-    -
-      url: "/projets"
-      name: "Projets"
   madeWithHeart: "Made with ♥︎"
